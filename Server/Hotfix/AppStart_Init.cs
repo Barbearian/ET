@@ -36,6 +36,14 @@ namespace ET
             
             Game.Scene.AddComponent<NavmeshComponent, Func<string, byte[]>>(RecastFileReader.Read);
 
+
+
+            //add my computer
+            Computer computer = Game.Scene.AddChild<Computer>();
+            computer.AddComponent<KeyboardComponent>();
+
+            computer.Start();
+
             switch (Game.Options.AppType)
             {
                 case AppType.Server:
